@@ -12,21 +12,37 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     List<HorarioEspiritualModel> list =
         horarioEspiritualController.horariosEspirituais!;
+
+    horarioEspiritualController.groupTypes(list);
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: AppColors.green,
+        child: Icon(Icons.add),
+        onPressed: () {},
+      ),
       appBar: AppBar(
         backgroundColor: AppColors.white,
         centerTitle: true,
         title: Text(
           "Horário Espiritual",
-          style: TextStyle(color: AppColors.blue),
+          style: TextStyle(
+              color: AppColors.green,
+              fontSize: 22,
+              fontWeight: FontWeight.bold),
         ),
       ),
       body: Column(
         children: [
-          VinculationOptionWidget(),
-          VinculationItemWidget(
+          Container(
+            height: 65,
+            child: ListView(scrollDirection: Axis.horizontal, children: [
+              for (var item in Type.values) VinculationOptionWidget(type: item)
+            ]),
+          ),
+          Expanded(
+              child: VinculationItemWidget(
             horariosEspirituais: [...list],
-          )
+          ))
         ],
       ),
     );

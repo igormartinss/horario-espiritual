@@ -15,13 +15,17 @@ class HorarioEspiritualModel {
       HorarioEspiritualModel(
           title: "Lorem Ipsum Dolor Sit Amet", type: Type.deus, isDone: true),
       HorarioEspiritualModel(
+          title: "Lorem Ipsum Dolor Sit Amet", type: Type.mundo, isDone: false),
+      HorarioEspiritualModel(
+          title: "Lorem Ipsum Dolor Sit Amet", type: Type.deus, isDone: true),
+      HorarioEspiritualModel(
           title: "Lorem Ipsum Dolor Sit Amet",
-          type: Type.proximo,
+          type: Type.proposito,
           isDone: false)
     ];
   }
 
-  String getType(Type type) {
+  static String getType(Type type) {
     String ret;
     type == Type.proposito
         ? ret = 'Propósito Pessoal'

@@ -6,4 +6,13 @@ class HorarioEspiritualController {
   HorarioEspiritualController() {
     horariosEspirituais = HorarioEspiritualModel.getMock();
   }
+
+  List<HorarioEspiritualModel> groupTypes(
+      List<HorarioEspiritualModel> horarios) {
+    horarios.sort((a, b) {
+      return a.type.index.compareTo(b.type.index);
+    });
+
+    return horarios;
+  }
 }
