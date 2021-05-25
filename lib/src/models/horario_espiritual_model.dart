@@ -3,7 +3,7 @@ enum Type { proposito, deus, proximo, consigo, mundo }
 class HorarioEspiritualModel {
   final String title;
   final Type type;
-  final bool isDone;
+  bool isDone;
 
   HorarioEspiritualModel(
       {required this.title, required this.type, this.isDone = false});
@@ -21,6 +21,10 @@ class HorarioEspiritualModel {
       HorarioEspiritualModel(
           title: "Lorem Ipsum Dolor Sit Amet",
           type: Type.proposito,
+          isDone: false),
+      HorarioEspiritualModel(
+          title: "Lorem Ipsum Dolor Sit Amet",
+          type: Type.proximo,
           isDone: false)
     ];
   }
